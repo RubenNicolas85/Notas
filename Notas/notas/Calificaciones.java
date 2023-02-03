@@ -11,17 +11,27 @@ public class Calificaciones {
 		String c = "";
 		System.out.print("Introduzca el valor de una calificación: ");
 		n = reader.nextInt();
-		if (n >= 0 && n < 5)
+		c = cali(n);
+		System.out.println(c);
+		reader.close();
+	}
+
+	/**
+	 * @param nota
+	 * @return
+	 */
+	public static String cali(int nota) {
+		String c;
+		if (nota >= 0 && nota < 5)
 			c = "Suspenso";
-		else if (n >= 5 && n < 7)
+		else if (nota >= 5 && nota < 7)
 			c = "Aprobado";
-		else if (n >= 7 && n < 9)
+		else if (nota >= 7 && nota < 9)
 			c = "Notable";
-		else if (n >= 9 && n <= 10)
+		else if (nota >= 9 && nota <= 10)
 			c = "Sobresaliente";
 		else
 			c = "El valor de la calificación introducida no es correcta";
-		System.out.println(c);
-		reader.close();
+		return c;
 	}
 }
